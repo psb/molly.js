@@ -1,4 +1,5 @@
 pdbs/
 node_modules/
 playground/
+pdb2json/
 *.pdf
