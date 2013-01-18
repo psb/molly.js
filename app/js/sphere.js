@@ -57,7 +57,7 @@ function init(){
   ///////////////////
 
   // Sphere params
-  var sphereGeom = new THREE.SphereGeometry();  // Defaults to 50, 8, 6; wireframe:false
+  var sphereGeom = new THREE.SphereGeometry( 50, 32, 16 );  // Defaults to 50, 8, 6; wireframe:false
 
   // Material
   var material = new THREE.MeshLambertMaterial({ color: 0x000088 });
