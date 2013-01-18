@@ -28,6 +28,7 @@ require.config({
   },
 
   paths: {
+    // Non-AMD
     three             : 'vendor/threejs/three.min',
     detector          : 'vendor/threejs/Detector',
     stats             : 'vendor/threejs/Stats',
@@ -35,24 +36,16 @@ require.config({
     keyboardState     : 'vendor/threex/THREEx.KeyboardState',
     fullScreen        : 'vendor/threex/THREEx.FullScreen',
     windowResize      : 'vendor/threex/THREEx.WindowResize',
+    // My AMD modules
     cpkAtoms          : 'app/cpk_atoms',
-    sphere            : 'app/sphere'
+    createSphere      : 'app/createSphere',
+    scene             : 'app/scene'
   }
 
 });
 
-require([
-  'three',
-  'detector',
-  'stats',
-  'trackballControls',
-  'keyboardState',
-  'fullScreen',
-  'windowResize',
-  'cpkAtoms',
-  'sphere'
-  ], function(three, detector, stats, trackballControls, keyboardState, fullScreen, windowResize, cpkAtoms, sphere) {
+require([ 'scene' ], function(scene) {
   
-    sphere();
+  scene();
 
 });
