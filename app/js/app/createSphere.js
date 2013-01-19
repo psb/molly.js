@@ -1,15 +1,17 @@
-define([ 'three' ], function(){
-  return function( x, y, z ){
+define([ 'three', 'cpkAtoms' ], function( ignore, cpkAtoms ){
+  return function( x, y, z, element ){
     // Sphere params
-    var sphereGeom = new THREE.SphereGeometry( 25, 32, 16 );
+    var sphereGeom = new THREE.SphereGeometry( 2, 32, 16 );
 
     // Material
-    var material = new THREE.MeshLambertMaterial({ color: 0x000088 });
+    var elementColor = '0x' + cpkAtoms[element];
+    // console.log( x, y, z, elementColor);
+    var material = new THREE.MeshLambertMaterial({ color: elementColor });
 
     // Sphere
     var sphere = new THREE.Mesh( sphereGeom, material );
-    sphere.position.set( x, y, z );
-    // sphere.position.set( 0, 50, 0 );
+    sphere.position.set( x*10, y*10, z*10 );
+
     return sphere;
   };
 });

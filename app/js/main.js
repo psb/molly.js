@@ -36,7 +36,10 @@ require.config({
     keyboardState     : 'vendor/threex/THREEx.KeyboardState',
     fullScreen        : 'vendor/threex/THREEx.FullScreen',
     windowResize      : 'vendor/threex/THREEx.WindowResize',
+    // AMD modules
+    underscore        : 'vendor/underscore_amd/underscore-min',
     // My AMD modules
+    parseCIF          : 'app/parse_cif_file',
     cpkAtoms          : 'app/cpk_atoms',
     createSphere      : 'app/createSphere',
     scene             : 'app/scene'
