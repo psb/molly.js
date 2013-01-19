@@ -9,12 +9,15 @@ define([ 'underscore' ], function(_){
 
     var atomsList = _.zip( x_coords, y_coords, z_coords, elements, component_atom_ids );
 
+    // SCALING FACTOR for the atom coordinates
+    var scalingFactor = 10;
+
     // Create atoms object using the zipped array
     var atoms = {};
     _.each( atomsList, function( atomArray ){
-      var x = atomArray[0];
-      var y = atomArray[1];
-      var z = atomArray[2];
+      var x = parseFloat( ( atomArray[0] * scalingFactor ).toFixed(3) );
+      var y = parseFloat( ( atomArray[1] * scalingFactor ).toFixed(3) );
+      var z = parseFloat( ( atomArray[2] * scalingFactor ).toFixed(3) );
       var element = atomArray[3];
       var component_atom_id = atomArray[4];
 

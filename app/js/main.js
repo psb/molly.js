@@ -39,16 +39,18 @@ require.config({
     // AMD modules
     underscore        : 'vendor/underscore_amd/underscore-min',
     // My AMD modules
-    parseCIF          : 'app/parse_cif_file',
+    getAtoms          : 'app/get_atoms',
+    getBonds          : 'app/get_bonds',
     cpkAtoms          : 'app/cpk_atoms',
     createSphere      : 'app/createSphere',
+    createTube        : 'app/createTube',
     scene             : 'app/scene'
   }
 
 });
 
 require([ 'scene' ], function(scene) {
-  
+
   scene();
 
 });
