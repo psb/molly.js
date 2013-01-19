@@ -1,7 +1,7 @@
 define([ 'three', 'cpkAtoms' ], function( ignore, cpkAtoms ){
   return function( atomObject ){
     // Sphere params
-    var sphereGeom = new THREE.SphereGeometry( 2, 32, 16 );
+    var sphereGeom = new THREE.SphereGeometry( 4, 32, 16 );
 
     // Material
     var elementColor = cpkAtoms[ atomObject.element ];

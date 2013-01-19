@@ -10,7 +10,7 @@ define([ 'underscore' ], function(_){
     var atomsList = _.zip( x_coords, y_coords, z_coords, elements, component_atom_ids );
 
     // SCALING FACTOR for the atom coordinates
-    var scalingFactor = 10;
+    var scalingFactor = 15;
 
     // Create atoms object using the zipped array
     var atoms = {};

@@ -1,7 +1,7 @@
 require.config({
-  
+
   baseUrl: 'js/',
-  
+
   shim: {
     'three': {
       exports: 'THREE'
@@ -39,6 +39,7 @@ require.config({
     // AMD modules
     underscore        : 'vendor/underscore_amd/underscore-min',
     // My AMD modules
+    CFF               : 'app/CFF',  // Temp
     getAtoms          : 'app/get_atoms',
     getBonds          : 'app/get_bonds',
     cpkAtoms          : 'app/cpk_atoms',
