@@ -1,14 +1,15 @@
 define([
-    'three'
-  , 'detector'
-  , 'stats'
-  , 'trackballControls'
-  , 'keyboardState'
-  , 'fullScreen'
-  , 'windowResize'
-  , 'parseCIF'
-  , 'createSphere'
-  ], function( ignore, ignore, ignore, ignore, ignore, ignore, ignore, parseCIF, createSphere){
+   'three'
+  ,'detector'
+  ,'stats'
+  ,'trackballControls'
+  ,'keyboardState'
+  ,'fullScreen'
+  ,'windowResize'
+  ,'underscore'
+  ,'parseCIF'
+  ,'createSphere'
+  ], function( ignore, ignore, ignore, ignore, ignore, ignore, ignore, _, parseCIF, createSphere){
   return function(){
     // Temp location for CFF mmCIF file
     var CFF = {
@@ -784,11 +785,8 @@ define([
     var keyboard = new THREEx.KeyboardState();
     var clock = new THREE.Clock();
 
-    init();
-    animate();
-
     // Functions
-    function init(){
+    var init = function(){
 
       ////////////
       // Set-up //
@@ -828,48 +826,40 @@ define([
       container.appendChild( stats.domElement );
 
       // Lights
-      var light = new THREE.PointLight( 0xffffff );
+      var light = new THREE.PointLight( 0xffffff ); // Add additional light from the bottom
       light.position.set( 0, 150, 50 );
       scene.add( light );
-
-      // // Floor
-      // var floorGeometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
-      // var floorMaterial = new THREE.MeshBasicMaterial( { color: 0x9999ff } );
-      // var floor = new THREE.Mesh(floorGeometry, floorMaterial);
-      // floor.position.y = -0.5;
-      // floor.doubleSided = true;
-      // scene.add(floor);
 
       ///////////////////
       // Custom Shapes //
       ///////////////////
 
       // Parse CFF json
-      var atoms = parseCIF(CFF);
+      var atoms = parseCIF( CFF );
       // Add multiple spheres to the scene using the createSphere function
-      for (var i = 0, len = atoms.length; i < len; i++) {
-        var x = atoms[i][0];
-        var y = atoms[i][1];
-        var z = atoms[i][2];
-        var element = atoms[i][3];
-        var atom = createSphere( x, y, z, element );
+      _.each( atoms, function( atom ){
+        var atom = createSphere( atom );
         scene.add( atom );
-      }
+      });
     }
 
-    function animate(){
+    var animate = function(){
       requestAnimationFrame( animate );
       render();
       update();
     }
 
-    function update(){
+    var update = function(){
       controls.update();
       stats.update();
     }
 
-    function render(){
+    var render = function(){
       renderer.render( scene, camera );
     }
+
+    // Run
+    init();
+    animate();
   };
 });
