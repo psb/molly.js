@@ -799,7 +799,7 @@ define([
 
       // Camera
       var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
-      var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
+      var VIEW_ANGLE = 35, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 10000;
       camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR );
       scene.add( camera );
       camera.position.set( 0, 150, 400 );
@@ -808,6 +808,7 @@ define([
       // Renderer
       renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
+      // renderer.setClearColorHex( 0xBBBBBB, 1 );
       container = document.createElement( 'div' );
       document.body.appendChild( container );
       container.appendChild( renderer.domElement );
@@ -828,18 +829,16 @@ define([
 
       // Lights
       var light = new THREE.PointLight( 0xffffff );
-      light.position.set( 0, 150, 100 );
+      light.position.set( 0, 150, 50 );
       scene.add( light );
 
-      var ambientLight = new THREE.AmbientLight(0x444444);
-      scene.add( ambientLight );
-
-      var floorGeometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
-      var floorMaterial = new THREE.MeshBasicMaterial( { color: 0x9999ff } );
-      var floor = new THREE.Mesh(floorGeometry, floorMaterial);
-      floor.position.y = -0.5;
-      floor.doubleSided = true;
-      scene.add(floor);
+      // // Floor
+      // var floorGeometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
+      // var floorMaterial = new THREE.MeshBasicMaterial( { color: 0x9999ff } );
+      // var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+      // floor.position.y = -0.5;
+      // floor.doubleSided = true;
+      // scene.add(floor);
 
       ///////////////////
       // Custom Shapes //
