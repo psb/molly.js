@@ -70,11 +70,11 @@ define([
       bottomLight.position.set( 0, -500, 0 );
       scene.add( bottomLight );
 
-      var farLight = new THREE.PointLight( 0xf8f8f8 );
+      var farLight = new THREE.PointLight( 0xc6c6c6 );
       farLight.position.set( 0, 0, -500 );
       scene.add( farLight );
 
-      var nearLight = new THREE.PointLight( 0xf8f8f8 );
+      var nearLight = new THREE.PointLight( 0xc6c6c6 );
       nearLight.position.set( 0, 0, 500 );
       scene.add( nearLight );
 
