@@ -80,15 +80,6 @@ define([
       nearLight.position.set( 0, 0, 500 );
       scene.add( nearLight );
 
-      // add directional light source
-      // var farDirectionalLight = new THREE.DirectionalLight( 0xf2f2f2 );
-      // farDirectionalLight.position.set( 0, 0, -250 );
-      // scene.add( farDirectionalLight );
-
-      // var nearDirectionalLight = new THREE.DirectionalLight( 0xf2f2f2 );
-      // nearDirectionalLight.position.set( 0, 0, 250 );
-      // scene.add( nearDirectionalLight );
-
       // HELPERS
 
       scene.add( new THREE.AxisHelper() );
@@ -107,12 +98,6 @@ define([
 
       var nearLightHelper = new THREE.PointLightHelper( nearLight, 20 );
       scene.add( nearLightHelper );
-
-      // var farDirectionalLightHelper = new THREE.DirectionalLightHelper( farDirectionalLight, 20 );
-      // scene.add( farDirectionalLightHelper );
-
-      // var nearDirectionalLightHelper = new THREE.DirectionalLightHelper( nearDirectionalLight, 20 );
-      // scene.add( nearDirectionalLightHelper );
 
       ///////////////////
       // Custom Shapes //
