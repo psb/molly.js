@@ -52,7 +52,9 @@ define([
       THREEx.FullScreen.bindKey({ charCode: 'm'.charCodeAt( 0 ) });
 
       // Controls
-      controls = new THREE.TrackballControls( camera );
+      controls = new THREE.TrackballControls( camera, renderer.domElement );
+      // controls.noZoom = true;
+      controls.zoomSpeed = 0.05;
 
       // Stats
       stats = new Stats();
@@ -88,6 +90,9 @@ define([
       // scene.add( nearDirectionalLight );
 
       // HELPERS
+
+      scene.add( new THREE.AxisHelper() );
+
       var cameraHelper = new THREE.CameraHelper( camera );
       scene.add( cameraHelper );
 
