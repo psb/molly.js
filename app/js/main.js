@@ -40,6 +40,7 @@ require.config({
     underscore        : 'vendor/underscore_amd/underscore-min',
     // My AMD modules
     CFF               : 'app/CFF',  // Temp
+    B11               : 'app/11B',  // Temp
     getAtoms          : 'app/get_atoms',
     getBonds          : 'app/get_bonds',
     cpkAtoms          : 'app/cpk_atoms',
@@ -50,8 +51,9 @@ require.config({
 
 });
 
-require([ 'scene' ], function(scene) {
+require([ 'scene', 'CFF', 'B11' ], function( scene, CFF, B11 ) {
 
-  scene();
+  // scene( CFF );
+  scene( B11 );
 
 });
