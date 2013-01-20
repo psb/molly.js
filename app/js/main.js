@@ -43,8 +43,8 @@ require.config({
     getAtoms          : 'app/get_atoms',
     getBonds          : 'app/get_bonds',
     cpkAtoms          : 'app/cpk_atoms',
-    createSphere      : 'app/createSphere',
-    createTube        : 'app/createTube',
+    Atom              : 'app/Atom',
+    Bond              : 'app/Bond',
     scene             : 'app/scene'
   }
 

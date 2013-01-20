@@ -2,11 +2,11 @@ define([
    'underscore'
   ,'getAtoms'
   ,'getBonds'
-  ,'createSphere'
-  ,'createTube'
+  ,'Atom'
+  ,'Bond'
   // Temp import of CFF file
   ,'CFF'
-  // Modules below are ignored in terms of passing them to the function.
+  // Modules below are ignored and not passed to the function.
   ,'three'
   ,'detector'
   ,'stats'
@@ -14,7 +14,7 @@ define([
   ,'keyboardState'
   ,'fullScreen'
   ,'windowResize'
-  ], function( _, getAtoms, getBonds, createSphere, createTube, CFF){
+  ], function( _, getAtoms, getBonds, Atom, Bond, CFF){
   return function(){
     // Detector
     if ( !Detector.webgl ) Detector.addGetWebGLMessage();
@@ -77,18 +77,17 @@ define([
       ///////////////////
 
       // Parse CFF json
-      var atoms = getAtoms( CFF );
-      var bonds = getBonds( CFF );
-      // console.log( bonds );
+      var atomsList = getAtoms( CFF );
+      var bondsList = getBonds( CFF );
       // Add multiple spheres to the scene using the createSphere function
-      _.each( atoms, function( atom ){
-        var atomSphere = createSphere( atom );
-        scene.add( atomSphere );
+      _.each( atomsList, function( atomObject ){
+        var atom = new Atom( atomObject );
+        scene.add( atom );
       });
       // Add bonds between atoms to the scene using the createBonds function
-      _.each( bonds, function( bond ){
-        var bondTube = createTube( bond, atoms );
-        scene.add( bondTube );
+      _.each( bondsList, function( bondObject ){
+        var bond = new Bond( bondObject, atomsList );
+        scene.add( bond );
       });
     };
 
