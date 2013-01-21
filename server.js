@@ -27,7 +27,7 @@ app.get('/:cifID', function(req, res){
   conn.run(
     r.table( 'compounds').get(query, '_chem_comp.id' ),
     function( data ) {
-      res.send( data ? data : { error: 'Compound not found' } );
+      res.send( data || { error: 'Compound not found' } );
     }
   );
 });

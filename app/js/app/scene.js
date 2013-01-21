@@ -13,7 +13,7 @@ define([
   ,'fullScreen'
   ,'windowResize'
   ], function( _, getAtoms, getBonds, Atom, Bond ){
-  return function( mmCIF ){
+  return function( mmCIF, sceneWidth, sceneHeight ){
     // Detector
     if ( !Detector.webgl ) Detector.addGetWebGLMessage();
     // Globals
@@ -32,7 +32,7 @@ define([
       scene = new THREE.Scene();
 
       // Camera
-      var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+      var SCREEN_WIDTH = sceneWidth, SCREEN_HEIGHT = sceneHeight;
       var VIEW_ANGLE = 35, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 10000;
       camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR );
       scene.add( camera );

@@ -51,15 +51,21 @@ require.config({
 
 require([ 'jquery', 'scene' ], function( $, scene ) {
 
-  var getCIFData = function( cifID ) {
-    $.getJSON('http://127.0.0.1:9000/' + cifID, function( data ){
-      scene( data );
+  var renderScene = function( mmCIFId, sceneWidth, sceneHeight ) {
+    $.getJSON('http://127.0.0.1:9000/' + mmCIFId, function( data ){
+      if (data.error) {
+        $('.mmCIF-compound').append( data.error );
+      } else {
+        scene( data, sceneWidth, sceneHeight );
+      }
     });
   };
 
   // Get mmCIF compund ID from webpage
   var mmCIF = $('.mmCIF-compound').data('mmcif');
   var mmCIFId = mmCIF.id;
+  var sceneWidth = parseInt(mmCIF.width) || window.innerWidth;
+  var sceneHeight = parseInt(mmCIF.height) || window.innerHeight;
   // Get data from server and render it to page
-  getCIFData( mmCIFId );
+  renderScene( mmCIFId, sceneWidth, sceneHeight );
 });
