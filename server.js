@@ -1,6 +1,7 @@
 var express = require( 'express' );
 var r = require( 'rethinkdb' );
 var cors = require( './cors' );
+var _ = require( 'underscore' );
 // Create app and use cors
 var app = express();
 app.use(cors);
@@ -23,10 +24,10 @@ app.get('/:cifIDs', function( req, res ){
   var queries = req.params.cifIDs.toUpperCase().split('&');
   console.log( queries );
   // Query the DB
-  var results = {};
   r.expr( queries ).map(function( query ){
     return r.table( 'compounds' ).get( query, '_chem_comp.id' );
-  }).run().collect(function( data ){
+  }).run().collect(function( results ){
+    var data = _.object( queries, results );
     res.send( data );
   });
 });
