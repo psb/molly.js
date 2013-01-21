@@ -49,7 +49,7 @@ require.config({
 
 });
 
-require([ 'jquery', 'scene' ], function( $, scene ) {
+require([ 'scene' ], function( scene ) {
 
   var renderScene = function( mmCIFId, sceneWidth, sceneHeight ) {
     $.getJSON('http://127.0.0.1:9000/' + mmCIFId, function( data ){

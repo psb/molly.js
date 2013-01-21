@@ -1,5 +1,13 @@
 body {
-  background-color: #C0C0C0;
   margin: 0;
   overflow: hidden;
+}
+
+.mmCIF-compound {
+  float: left;
+  /*margin: 20px;*/
+}
+
+#CFF {
+  background-color: #BBBBBB;
 }
