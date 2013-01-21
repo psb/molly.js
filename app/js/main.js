@@ -61,12 +61,17 @@ require([ 'jquery', 'scene' ], function( $, scene ) {
     });
   };
 
-  // Get mmCIF compund ID from webpage
-  var mmCIF = $('.mmCIF-compound').data('mmcif');
-  var mmCIFId = mmCIF.id;
-  var sceneWidth = parseInt(mmCIF.width) || parseInt(mmCIF.height) || window.innerWidth;
-  var sceneHeight = parseInt(mmCIF.height) || parseInt(mmCIF.width) || window.innerHeight;
-  console.log(mmCIFId, sceneWidth, sceneHeight);
-  // Get data from server and render it to page
-  renderScene( mmCIFId, sceneWidth, sceneHeight );
+  // Get all nodes with .mmCIF-compound classes
+  var compounds = $('.mmCIF-compound');
+  // Iterate through the nodes and render to page
+  compounds.each( function(){
+    // Get mmCIF compund ID from webpage
+    var mmCIF = $(this).data('mmcif');
+    var mmCIFId = mmCIF.id;
+    var sceneWidth = parseInt(mmCIF.width) || parseInt(mmCIF.height) || window.innerWidth;
+    var sceneHeight = parseInt(mmCIF.height) || parseInt(mmCIF.width) || window.innerHeight;
+    console.log(mmCIFId, sceneWidth, sceneHeight);
+    // Get data from server and render it to page
+    renderScene( mmCIFId, sceneWidth, sceneHeight );
+  });
 });
