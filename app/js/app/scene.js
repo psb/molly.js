@@ -82,22 +82,22 @@ define([
 
       // HELPERS
 
-      scene.add( new THREE.AxisHelper() );
+      // scene.add( new THREE.AxisHelper() );
 
-      var cameraHelper = new THREE.CameraHelper( camera );
-      scene.add( cameraHelper );
+      // var cameraHelper = new THREE.CameraHelper( camera );
+      // scene.add( cameraHelper );
 
-      var topLightHelper = new THREE.PointLightHelper( topLight );
-      scene.add( topLightHelper );
+      // var topLightHelper = new THREE.PointLightHelper( topLight );
+      // scene.add( topLightHelper );
 
-      var bottomLightHelper = new THREE.PointLightHelper( bottomLight );
-      scene.add( bottomLightHelper );
+      // var bottomLightHelper = new THREE.PointLightHelper( bottomLight );
+      // scene.add( bottomLightHelper );
 
-      var farLightHelper = new THREE.PointLightHelper( farLight, 100 );
-      scene.add( farLightHelper );
+      // var farLightHelper = new THREE.PointLightHelper( farLight, 100 );
+      // scene.add( farLightHelper );
 
-      var nearLightHelper = new THREE.PointLightHelper( nearLight, 20 );
-      scene.add( nearLightHelper );
+      // var nearLightHelper = new THREE.PointLightHelper( nearLight, 20 );
+      // scene.add( nearLightHelper );
 
       ///////////////////
       // Custom Shapes //
