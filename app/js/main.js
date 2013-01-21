@@ -39,8 +39,6 @@ require.config({
     // AMD modules
     underscore        : 'vendor/underscore_amd/underscore-min',
     // My AMD modules
-    CFF               : 'app/CFF',  // Temp
-    B11               : 'app/11B',  // Temp
     getAtoms          : 'app/get_atoms',
     getBonds          : 'app/get_bonds',
     cpkAtoms          : 'app/cpk_atoms',
@@ -51,9 +49,17 @@ require.config({
 
 });
 
-require([ 'scene', 'CFF', 'B11' ], function( scene, CFF, B11 ) {
+require([ 'jquery', 'scene' ], function( $, scene ) {
 
-  // scene( CFF );
-  scene( B11 );
+  var getCIFData = function( cifID ) {
+    $.getJSON('http://127.0.0.1:9000/' + cifID, function( data ){
+      scene( data );
+    });
+  };
 
+  // Get mmCIF compund ID from webpage
+  var mmCIF = $('.mmCIF-compound').data('mmcif');
+  var mmCIFId = mmCIF.id;
+  // Get data from server and render it to page
+  getCIFData( mmCIFId );
 });

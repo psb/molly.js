@@ -1,6 +1,9 @@
-var express = require('express');
+var express = require( 'express' );
+var r = require( 'rethinkdb' );
+var cors = require( './cors' );
+// Create app and use cors
 var app = express();
-var r = require('rethinkdb');
+app.use(cors);
 
 // Connect to DB
 var conn;
@@ -18,15 +21,16 @@ r.connect(
 
 app.get('/:cifID', function(req, res){
   var query = req.params.cifID.toUpperCase();
+  // console.log(query);
+  console.log(req.query.callback);
   // Query the DB
   conn.run(
     r.table( 'compounds').get(query, '_chem_comp.id' ),
     function( data ) {
-      // result = data;
-      res.send( data ? data : '404' );
+      res.send( data ? data : { error: 'Compound not found' } );
     }
   );
-
 });
 
 app.listen(9000);
+console.log('express running at http://localhost: %d', 9000);
