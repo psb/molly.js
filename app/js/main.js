@@ -56,7 +56,7 @@ require([ 'jquery', 'scene' ], function( $, scene ) {
       if (data.error) {
         $('.mmCIF-compound').append( data.error );
       } else {
-        scene( data, sceneWidth, sceneHeight );
+        scene( mmCIFId, data, sceneWidth, sceneHeight );
       }
     });
   };
@@ -64,8 +64,9 @@ require([ 'jquery', 'scene' ], function( $, scene ) {
   // Get mmCIF compund ID from webpage
   var mmCIF = $('.mmCIF-compound').data('mmcif');
   var mmCIFId = mmCIF.id;
-  var sceneWidth = parseInt(mmCIF.width) || window.innerWidth;
-  var sceneHeight = parseInt(mmCIF.height) || window.innerHeight;
+  var sceneWidth = parseInt(mmCIF.width) || parseInt(mmCIF.height) || window.innerWidth;
+  var sceneHeight = parseInt(mmCIF.height) || parseInt(mmCIF.width) || window.innerHeight;
+  console.log(mmCIFId, sceneWidth, sceneHeight);
   // Get data from server and render it to page
   renderScene( mmCIFId, sceneWidth, sceneHeight );
 });

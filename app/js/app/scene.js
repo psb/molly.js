@@ -13,7 +13,7 @@ define([
   ,'fullScreen'
   ,'windowResize'
   ], function( _, getAtoms, getBonds, Atom, Bond ){
-  return function( mmCIF, sceneWidth, sceneHeight ){
+  return function( divID, mmCIF, sceneWidth, sceneHeight ){
     // Detector
     if ( !Detector.webgl ) Detector.addGetWebGLMessage();
     // Globals
@@ -43,8 +43,7 @@ define([
       renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
       // renderer.setClearColorHex( 0xBBBBBB, 1 );
-      container = document.createElement( 'div' );
-      document.body.appendChild( container );
+      container = document.getElementById( divID );
       container.appendChild( renderer.domElement );
 
       // Events
