@@ -17,7 +17,7 @@ r.connect(
 );
 
 app.get('/:cifID', function(req, res){
-  var query = req.params.cifID;
+  var query = req.params.cifID.toUpperCase();
   // Query the DB
   conn.run(
     r.table( 'compounds').get(query, '_chem_comp.id' ),
