@@ -49,29 +49,36 @@ require.config({
 
 });
 
-require([ 'scene' ], function( scene ) {
+require([ 'underscore', 'scene' ], function( _, scene ) {
 
-  var renderScene = function( mmCIFId, sceneWidth, sceneHeight ) {
-    $.getJSON('http://127.0.0.1:9000/' + mmCIFId, function( data ){
-      if (data.error) {
-        $('.mmCIF-compound').append( data.error );
+  var renderScenes = function( mmCIFIds, compoundNodes ) {
+    $.getJSON('http://127.0.0.1:9000/' + mmCIFIds.join('&'), function( data ){
+      if ( !data ) {
+        $('body').append( 'Error getting data.' );
       } else {
-        scene( mmCIFId, data, sceneWidth, sceneHeight );
+        console.log(data);
+        // Iterate through the mmCIFIds and render a scene
+        _.each( compoundNodes, function( node ){
+          var mmCIFAttrs = $( node ).data( 'mmcif' );
+          var mmCIFId = mmCIFAttrs.id;
+          if ( data[ mmCIFId ] ) {
+            scene( mmCIFId, mmCIFAttrs, data[ mmCIFId ] );
+          } else {
+            $( mmCIFId ).append( 'Compound not found.' );
+          }
+        });
       }
     });
   };
 
   // Get all nodes with .mmCIF-compound classes
-  var compounds = $('.mmCIF-compound');
-  // Iterate through the nodes and render to page
-  compounds.each( function(){
-    // Get mmCIF compund ID from webpage
-    var mmCIF = $(this).data('mmcif');
-    var mmCIFId = mmCIF.id;
-    var sceneWidth = parseInt(mmCIF.width) || parseInt(mmCIF.height) || window.innerWidth;
-    var sceneHeight = parseInt(mmCIF.height) || parseInt(mmCIF.width) || window.innerHeight;
-    console.log(mmCIFId, sceneWidth, sceneHeight);
-    // Get data from server and render it to page
-    renderScene( mmCIFId, sceneWidth, sceneHeight );
-  });
+  var compoundNodes = $('.mmCIF-compound');
+  // Get all the compound ids
+  var mmCIFIds = _.reduce( compoundNodes, function( myArray, div ){
+      myArray.push( $( div ).attr( 'id' ) );
+      return myArray;
+    }, []
+  );
+  // Get data and render scenes
+  renderScenes( mmCIFIds, compoundNodes );
 });

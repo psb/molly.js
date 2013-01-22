@@ -13,7 +13,11 @@ define([
   ,'fullScreen'
   ,'windowResize'
   ], function( _, getAtoms, getBonds, Atom, Bond ){
-  return function( divID, mmCIF, sceneWidth, sceneHeight ){
+  return function( divID, mmCIFAttrs, mmCIF ){
+    // Extract scene params
+    var sceneWidth = parseInt(mmCIFAttrs.width) || parseInt(mmCIFAttrs.height) || window.innerWidth;
+    var sceneHeight = parseInt(mmCIFAttrs.height) || parseInt(mmCIFAttrs.width) || window.innerHeight;
+    var showStats = mmCIFAttrs.stats || false;
     // Detector
     if ( !Detector.webgl ) Detector.addGetWebGLMessage();
     // Globals
@@ -56,11 +60,13 @@ define([
       controls.zoomSpeed = 0.05;
 
       // Stats
-      stats = new Stats();
-      // stats.domElement.style.position = 'absolute';
-      // stats.domElement.style.bottom = '0px';
-      stats.domElement.style.zIndex = 100;
-      container.appendChild( stats.domElement );
+      if ( showStats ) {
+        stats = new Stats();
+        // stats.domElement.style.position = 'absolute';
+        // stats.domElement.style.bottom = '0px';
+        stats.domElement.style.zIndex = 100;
+        container.appendChild( stats.domElement );
+      }
 
       // Lights
       var topLight = new THREE.PointLight( 0xf8f8f8 );
@@ -125,7 +131,9 @@ define([
 
     var update = function(){
       controls.update();
-      stats.update();
+      if (showStats) {
+        stats.update();
+      }
     };
 
     var render = function(){
