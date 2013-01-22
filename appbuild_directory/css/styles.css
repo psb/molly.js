@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+.mmCIF-compound {
+  float: left;
+  
+}
+#CFF {
+  background-color: #BBBBBB;
+}
+[id='11b'] {
+  background-color: red;
+}
+[id='0ja'] {
+  background-color: blue;
+}

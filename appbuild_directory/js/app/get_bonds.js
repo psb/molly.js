@@ -1,0 +1,1 @@
+define(["underscore"],function(e){return function(t){var n=t["_chem_comp_bond.atom_id_1"],r=t["_chem_comp_bond.atom_id_2"],i=t["_chem_comp_bond.value_order"],s=e.zip(n,r,i),o=e.map(s,function(e){return{atom1:e[0],atom2:e[1],bondType:e[2]}});return o}});

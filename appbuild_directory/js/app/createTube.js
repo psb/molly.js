@@ -1,0 +1,1 @@
+define(["three"],function(e){return function(e,t){var n=t[e.atom1],r=t[e.atom2],i=new THREE.LineCurve3(new THREE.Vector3(r.x,r.y,r.z),new THREE.Vector3(n.x,n.y,n.z)),s=new THREE.TubeGeometry(i),o=0,u=new THREE.MeshLambertMaterial({color:o}),a=new THREE.Mesh(s,u);return a.bondPair=e.atom1+"-"+e.atom2,a.geometry.dynamic=!0,a}});

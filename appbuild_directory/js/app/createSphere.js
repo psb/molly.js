@@ -1,0 +1,1 @@
+define(["three","cpkAtoms"],function(e,t){return function(e){var n=new THREE.SphereGeometry(4,32,16),r=t[e.element],i=new THREE.MeshLambertMaterial({color:r}),s=new THREE.Mesh(n,i);return s.component_atom_id=e.component_atom_id,s.geometry.dynamic=!0,s.position.set(e.x,e.y,e.z),s}});
