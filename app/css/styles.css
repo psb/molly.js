@@ -3,6 +3,10 @@ body {
   overflow: hidden;
 }
 
+.container {
+  margin: 0 auto;
+}
+
 .mmCIF-compound {
   float: left;
   /*margin: 20px;*/

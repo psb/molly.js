@@ -6,3 +6,4 @@ papers/
 rethinkdb/
 rethinkdb_data/
 r.js
+.gitignore
