@@ -21,10 +21,13 @@ r.connect(
 );
 
 app.get('/:cifIDs', function( req, res ){
-  var queries = req.params.cifIDs.toUpperCase().split('&');
-  console.log( queries );
+  var queries = req.params.cifIDs.split('&');
+  // Uppercase queries before querying the database
+  var upperQueries = _.map( queries, function( qry ){
+    return qry.toUpperCase();
+  });
   // Query the DB
-  r.expr( queries ).map(function( query ){
+  r.expr( upperQueries ).map(function( query ){
     return r.table( 'compounds' ).get( query, '_chem_comp.id' );
   }).run().collect(function( results ){
     var data = _.object( queries, results );
