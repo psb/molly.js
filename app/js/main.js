@@ -56,7 +56,6 @@ require([ 'underscore', 'scene' ], function( _, scene ) {
       if ( !data ) {
         $('body').append( 'Error getting data.' );
       } else {
-        console.log(data);
         // Iterate through the mmCIFIds and render a scene
         _.each( compoundNodes, function( node ){
           var mmCIFAttrs = $( node ).data( 'mmcif' );
@@ -64,7 +63,7 @@ require([ 'underscore', 'scene' ], function( _, scene ) {
           if ( data[ mmCIFId ] ) {
             scene( mmCIFId, mmCIFAttrs, data[ mmCIFId ] );
           } else {
-            $( mmCIFId ).append( 'Compound not found.' );
+            $( '#' + mmCIFId ).append( 'Compound not found.' );
           }
         });
       }
