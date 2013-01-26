@@ -1,9 +1,0 @@
-pdbs/
-node_modules/
-playground/
-pdb2json/
-papers/
-rethinkdb/
-rethinkdb_data/
-r.js
-.gitignore
