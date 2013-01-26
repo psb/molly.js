@@ -35,7 +35,7 @@ js/vendor/threex/examples/threex.sparks/css/main.css
 ----------------
 js/vendor/threex/examples/threex.sparks/css/main.css
 
-js/main.js
+js/molly.js
 ----------------
 js/vendor/underscore_amd/underscore-min.js
 js/app/get_atoms.js
@@ -51,4 +51,4 @@ js/vendor/threex/THREEx.KeyboardState.js
 js/vendor/threex/THREEx.FullScreen.js
 js/vendor/threex/THREEx.WindowResize.js
 js/app/scene.js
-js/main.js
+js/molly.js
