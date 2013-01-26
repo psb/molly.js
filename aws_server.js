@@ -20,6 +20,10 @@ r.connect(
   }
 );
 
+app.get('/', function( req, res ){
+  res.send(  );
+});
+
 app.get('/api/pdb_compounds/:cifIDs', function( req, res ){
   var queries = req.params.cifIDs.split('&');
   // Uppercase queries before querying the database
