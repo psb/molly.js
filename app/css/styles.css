@@ -3,13 +3,8 @@ body {
   overflow: hidden;
 }
 
-.container {
-  margin: 0 auto;
-}
-
 .mmCIF-compound {
   float: left;
-  /*margin: 20px;*/
 }
 
 #CFF {
@@ -17,9 +12,9 @@ body {
 }
 
 [id='11b'] {
-  background-color: red;
+  background-color: #FCD6B8;
 }
 
 [id='0ja'] {
-  background-color: blue;
+  background-color: #80B3FF;
 }
