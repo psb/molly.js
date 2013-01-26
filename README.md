@@ -4,15 +4,15 @@
 
 Molly is an application designed to render molecule on the web using WebGL.
 
-Currently it can only render the chemical components found in PDB molecules, which are deposited at [PDBe]("http://www.ebi.ac.uk/pdbe-srv/pdbechem/").
+Currently it can only render the chemical components found in PDB molecules, which are deposited at [PDBe](http://www.ebi.ac.uk/pdbe-srv/pdbechem/).
 
-Demo: ("http://mollyjs.com/example")
+Demo: http://mollyjs.com/example
 
 The database used by Molly was last updated on the 26th of January 2013.
 
 ### Requirements
 
-- [RequireJS WITH JQuery]("http://requirejs.org/docs/jquery.html")
+- [RequireJS WITH JQuery](http://requirejs.org/docs/jquery.html)
 
 ### How to use
 
@@ -55,4 +55,4 @@ If either height and width are omitted the Molly uses the other value (height or
 
 ### License
 
-See the [LICENSE]() file
+See the [LICENSE](https://github.com/psb/molly.js/blob/master/LICENSE.txt) file
