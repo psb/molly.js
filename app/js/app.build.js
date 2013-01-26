@@ -2,10 +2,10 @@
   appDir: "../",
   baseUrl: "js",
   dir: "../../appbuild_directory",
-  mainConfigFile: "main.js",
+  mainConfigFile: "molly.js",
   modules: [
     {
-      name: "main"
+      name: "molly"
     }
   ]
 })
