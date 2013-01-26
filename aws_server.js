@@ -21,7 +21,11 @@ r.connect(
 );
 
 app.get('/', function( req, res ){
-  res.send(  );
+  res.redirect( 'https://github.com/psb/molly.js' );
+});
+
+app.get('/example', function( req, res ){
+  res.sendfile( '/appbuild_directory/examples.html' );
 });
 
 app.get('/api/pdb_compounds/:cifIDs', function( req, res ){
