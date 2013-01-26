@@ -1,6 +1,6 @@
 ## Molly - WebGL Molecule Viewer.
 
-#### v 0.0.1
+#### v0.0.1
 
 Molly is an application designed to render molecule on the web using WebGL.
 
