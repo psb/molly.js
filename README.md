@@ -60,6 +60,9 @@ If either height and width are omitted the Molly uses the other value (height or
 - [Requirejs](http://requirejs.org/)
 - [jQuery](http://jquery.com/) (bundled with Requirejs)
 - [Underscore.js](https://github.com/amdjs/underscore) (the AMD compatible version)
+- [Express](http://expressjs.com/)
+- [Node.js](http://nodejs.org/)
+- [AWS EC2](http://aws.amazon.com/ec2/)
 
 ### License
 
