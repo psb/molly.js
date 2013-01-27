@@ -53,6 +53,14 @@ If either height and width are omitted the Molly uses the other value (height or
 - Be able to render complex molecules such as proteins.
 - Have more interactivity and analysis tools, akin to a desktop molecule viewer.
 
+### Tech used
+
+- [Three.js](https://github.com/mrdoob/three.js/)
+- [ThreeX](https://github.com/jeromeetienne/threex)
+- [Requirejs](http://requirejs.org/)
+- [jQuery](http://jquery.com/) (bundled with Requirejs)
+- [Underscore.js](https://github.com/amdjs/underscore) (the AMD compatible version)
+
 ### License
 
 See the [LICENSE](https://github.com/psb/molly.js/blob/master/LICENSE.txt) file

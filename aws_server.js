@@ -4,7 +4,8 @@ var cors = require( './cors' );
 var _ = require( 'underscore' );
 // Create app and use cors
 var app = express();
-app.use(cors);
+app.use( cors );
+app.use( express.static( __dirname + '/appbuild_directory' ) );
 
 // Connect to DB
 var conn;
@@ -25,7 +26,7 @@ app.get('/', function( req, res ){
 });
 
 app.get('/example', function( req, res ){
-  res.sendfile( '/appbuild_directory/examples.html' );
+  res.sendfile( '/examples.html' );
 });
 
 app.get('/api/pdb_compounds/:cifIDs', function( req, res ){
