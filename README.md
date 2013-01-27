@@ -58,6 +58,7 @@ If either height and width are omitted the Molly uses the other value (height or
 - [Three.js](https://github.com/mrdoob/three.js/)
 - [ThreeX](https://github.com/jeromeetienne/threex)
 - [Requirejs](http://requirejs.org/)
+- [RethinkDB](http://www.rethinkdb.com/)
 - [jQuery](http://jquery.com/) (bundled with Requirejs)
 - [Underscore.js](https://github.com/amdjs/underscore) (the AMD compatible version)
 - [Express](http://expressjs.com/)
