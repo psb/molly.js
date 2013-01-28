@@ -38,7 +38,7 @@ Once the script is present in the page, all you need to do is create some HTML e
 - `id`: the ID of the molecule you want to display (REQUIRED).
 - `class="mmCIF-compound"`: a class that tells Molly where to find the compound IDs (REQUIRED).
 - `data-mmcif`: data-attribute that tells Molly how you want to render the molecule (REQUIRED).
-  - `id`: the ID of the molecule you want to display (REQUIRED). **NOTE: This MUST match the other ID in name and case**.
+  - `id`: the ID of the molecule you want to display (REQUIRED). __**NOTE: This MUST match the other ID exactly**__.
   - `width`: the width of the rendered scene (optional).
   - `height`: the height of the rendered scene (optional).
   - `stats`: Three.js rendering statistics for the scene (optional).
