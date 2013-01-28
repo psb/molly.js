@@ -52,7 +52,7 @@ require.config({
 require([ 'underscore', 'scene' ], function( _, scene ) {
 
   var renderScenes = function( mmCIFIds, compoundNodes ) {
-    $.getJSON('http://pdbjs.com/api/pdb_compounds/' + mmCIFIds.join('&'), function( data ){
+    $.getJSON('http://mollyjs.com/api/pdb_compounds/' + mmCIFIds.join('&'), function( data ){
       if ( !data ) {
         $('body').append( 'Error getting data.' );
       } else {

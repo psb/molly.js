@@ -52,6 +52,7 @@ If either height and width are omitted the Molly uses the other value (height or
 - Be able to output details (name, molecular weight, etc.) about the compounds to the HTML page, if required.
 - Be able to render complex molecules such as proteins.
 - Have more interactivity and analysis tools, akin to a desktop molecule viewer.
+- Tests.
 
 ### Tech used
 
