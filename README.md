@@ -16,7 +16,7 @@ The database used by Molly was last updated on the 26th of January 2013.
 
 ### How to use
 
-Download the `molly.js` file in the `appbuild_directory/js/` folder. This should contain everything needed to run the visualizations. (Alternatively, download the whole directory to get all the files, including the `examples.html` file, css file, etc.)
+Download the `molly.js` file in the `appbuild_directory/js/` folder. This file is a minified file containing all the libraries Molly uses (except requirejs) and should contain everything needed to run the visualizations. (Alternatively, download the whole directory to get all the files, including the `examples.html` file, css file, etc.)
 
 The `example.html` file shows how to use the application. Simply put the `script` tag in your page and create some HTML elements with molecule IDs on. You can either this file as a template or create your own. If you create your own, ensure that the script tag points to your copy of `require.js` and `molly.js`.
 
