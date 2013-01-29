@@ -26,7 +26,7 @@ app.get('/', function( req, res ){
 });
 
 app.get('/example', function( req, res ){
-  res.sendfile( 'examples.html' );
+  res.sendfile( '/examples.html' );
 });
 
 app.get('/api/pdb_compounds/:cifIDs', function( req, res ){

@@ -4,7 +4,8 @@ var cors = require( './cors' );
 var _ = require( 'underscore' );
 // Create app and use cors
 var app = express();
-app.use(cors);
+app.use( cors );
+app.use( express.static( __dirname + '/appbuild_directory' ) );
 
 // Connect to DB
 var conn;
@@ -24,6 +25,11 @@ app.get('/', function( req, res ){
   res.redirect( 'https://github.com/psb/molly.js' );
 });
 
+// app.get('/example', function( req, res ){
+//   // console.log(req);
+//   res.sendfile('examples.html' );
+// });
+
 app.get('/api/pdb_compounds/:cifIDs', function( req, res ){
   var queries = req.params.cifIDs.split('&');
   // Uppercase queries before querying the database
@@ -40,4 +46,4 @@ app.get('/api/pdb_compounds/:cifIDs', function( req, res ){
 });
 
 app.listen(9000);
-console.log('express running at http://localhost: %d', 9000);
+console.log('express listeing at: %d', 9000);
