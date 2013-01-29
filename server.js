@@ -25,11 +25,6 @@ app.get('/', function( req, res ){
   res.redirect( 'https://github.com/psb/molly.js' );
 });
 
-// app.get('/example', function( req, res ){
-//   // console.log(req);
-//   res.sendfile('examples.html' );
-// });
-
 app.get('/api/pdb_compounds/:cifIDs', function( req, res ){
   var queries = req.params.cifIDs.split('&');
   // Uppercase queries before querying the database
