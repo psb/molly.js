@@ -1,0 +1,9 @@
+app/r.js
+appbuild_directory/r.js
+node_modules/
+papers/
+pdb2json/
+pdbs/
+playground/
+rethinkdb/
+rethinkdb_data/
