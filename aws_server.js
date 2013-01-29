@@ -41,4 +41,4 @@ app.get('/api/pdb_compounds/:cifIDs', function( req, res ){
 });
 
 app.listen(80);
-console.log('express listeing at: %d', 80);
+console.log('express listening at: %d', 80);
