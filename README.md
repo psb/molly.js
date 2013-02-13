@@ -24,8 +24,11 @@ The below code shows the body the `example.html` file:
 
     <body>
       <div class="container">
+        <!-- With no scene parameters -->
         <div id="CFF" class="mmCIF-compound" data-mmcif='{"id":"CFF"}'></div>
+        <!-- Or with scene parameters width and height -->
         <div id="CFF" class="mmCIF-compound" data-mmcif='{"id":"CFF", "width":"600", "height":"600"}'></div>
+        <!-- Or with multiple IDs and multiple parameters -->
         <div id="CFF" class="mmCIF-compound" data-mmcif='{"id":"CFF", "width":"450"}'></div>
         <div id="11b" class="mmCIF-compound" data-mmcif='{"id":"11b", "width":"450", "height":"450", "stats":"true"}'></div>
         <div id="0ja" class="mmCIF-compound" data-mmcif='{"id":"0ja", "height":"450"}'></div>
